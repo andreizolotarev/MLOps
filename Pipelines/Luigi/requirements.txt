@@ -1,0 +1,4 @@
+pandas==0.25.1
+luigi==3.0.2
+yfinance==0.1.55
+matplotlib==3.3.3
