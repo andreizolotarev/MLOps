@@ -27,12 +27,12 @@ In this case an AAPL (Apple) ticker data will be download for each date since 20
 Once you've done it, files are being collected at /volume/data/{DATE} and you can see Luigi's pipeline visualization at 0.0.0.0:1111 like:
 
 <p style="text-align:center;">Go to 0.0.0.0:1111, select Pipeline (1) and click on the icon (2):</p>
-<img src="img/Visualizer.png"
+<img src="img/visualizer.png"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
 
 <p style="text-align:center;"> Pipeline visualization</p>
-<img src="img/Pipeline.png"
+<img src="img/pipeline.png"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
      
