@@ -80,6 +80,7 @@ To get predictions, type:
 redis-cli AI.TENSORGET iris:inferences VALUES META
 ```
 <img src="img/prediction.png"/> 
+
 ## to Stop/Kill redisai container
 Once you've tried the RedisAI, don't forget to kill the running container.
 Open up new terminal and type
