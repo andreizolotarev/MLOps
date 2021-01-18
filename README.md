@@ -18,3 +18,4 @@
 ### Deployment options
 <img src="artifacts/img/flask_logo.png" alt="Flask" width="150" height="80" /> 
 <img src="artifacts/img/python_package.png" alt="python_package" width="150" height="90" />
+<img src="artifacts/img/redisai_logo.png" alt="python_package" width="160" height="80" />
