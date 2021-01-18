@@ -22,6 +22,6 @@ USER new_user
 # select working directory
 WORKDIR /home/new_user
 
-#CMD cd volume && mlflow server --host 0.0.0.0:7777
+CMD cd volume && mlflow server --host 0.0.0.0:7777
 
 

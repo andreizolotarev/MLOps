@@ -1,0 +1,26 @@
+version: "3.7"
+services:
+  mlflow_server:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    expose:
+      - "7777"
+    ports:
+      - "7777:7777"
+    volumes:
+      - ./volume:/home/new_user/volume
+    command: bash -c "cd volume && mlflow server --host 0.0.0.0:7777"
+    restart: on-failure
+
+  scripts:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - mlflow_server
+    volumes:
+        - ./volume:/home/new_user/volume
+    command: bash -c "export GIT_PYTHON_REFRESH=quiet && cd volume/script && python metric_tracking.py"
+    restart: on-failure
+    
