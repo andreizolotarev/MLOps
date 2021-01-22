@@ -10,7 +10,7 @@ Feature values: [{sepal_length}, {sepal_width}, {petal_length}, {petal_width}]
 ## Architecture:
 <img src="img/architecture.png"/>
 
-In my RedisAI example you could see an end-to-end inference pipeline.
+In my previous RedisAI example (https://github.com/andreizolotarev/MLOps/tree/main/docker/redisai_iris) you could see an end-to-end inference pipeline.
 But everything was performed using terminal/redis cli commands which is not convenient.
 In this example RedisAI commands will be sent via python client (redisai-py https://github.com/RedisAI/redisai-py).
 
