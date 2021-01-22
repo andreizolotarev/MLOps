@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+  redisai:
+    image: redislabs/redismod
+    expose:
+      - "6379"
+    ports:
+      - "6379:6379"
+
+  flask:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - redisai
+    expose:
+      - "7777"
+    ports:
+      - "7777:7777"
+    command: python app.py 7777
+    restart: on-failure

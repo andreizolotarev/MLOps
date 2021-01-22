@@ -1,0 +1,6 @@
+# Python client
+redisai==1.0.1
+# Converting tool
+ml2rt
+
+flask==1.1.1
