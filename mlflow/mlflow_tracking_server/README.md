@@ -8,7 +8,7 @@ docker-compose build --build-arg USER_ID=$(id -u) --build-arg GROUP_ID=$(id -g)
 ```
 2) Run containers (Start Mlflow's servevr at port 7777 and track metrics):  
 ```
-docker compose up
+docker-compose up
 ```
 
 If you go to 0.0.0.0:7777, then you will see mlflow UI
