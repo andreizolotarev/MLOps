@@ -1,0 +1,38 @@
+version: '3.7'
+services:
+    postgres:
+        image: postgres:9.6
+        container_name: postgres_container
+        restart: always
+        environment:
+            - POSTGRES_USER=airflow
+            - POSTGRES_PASSWORD=airflow
+            - POSTGRES_DB=airflow
+        volumes:
+            - ./volume/postgres:/var/lib/postgresql/data
+
+    airflow: 
+        build: ./airflow_image
+        container_name: airflow_container
+        restart: always
+        depends_on:
+            - postgres
+        environment:
+            - LOAD_EX=n
+            #- EXECUTOR=Local
+            # hardcode fernetkey otherwise dags with connectors will fail after container restart
+            - AIRFLOW__CORE__FERNET_KEY="6cLsuD9kKqr70xN5PKlFgJuGahER3DKmWtyseR8dZIA="
+        volumes:
+            - ./volume/dags:/usr/local/airflow/dags
+            - ./volume/data:/usr/local/airflow/data
+            - ./volume/src:/usr/local/airflow/src
+        ports:
+            - 8889:8080 # airflow server port
+        command: webserver
+        healthcheck:
+            test: ["CMD-SHELL", "[ -f /usr/local/airflow/airflow-webserver.pid ]"]
+            interval: 30s
+            timeout: 30s
+            retries: 3
+
+
