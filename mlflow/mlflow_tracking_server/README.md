@@ -24,5 +24,5 @@ If you go to 0.0.0.0:7777, then you will see mlflow UI
 
 If you want to enter the container via docker-compose use:
 ```
-docker-compose run {service_name} bash
+docker-compose exec {service_name} bash
 ```
